@@ -33,6 +33,12 @@
   '(smartparens
     evil-smartparens))
 
+(defun smartparens-key/post-init-smartparens ()
+  (spacemacs|use-package-add-hook smartparens
+    :post-config
+    (sp-local-pair 'clojure-mode "`" "`")))
+
+
 (defun smartparens-key/init-evil-smartparens ()
   (use-package evil-smartparens
     :defer t
